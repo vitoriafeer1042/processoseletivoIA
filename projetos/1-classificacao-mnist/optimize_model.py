@@ -1,5 +1,6 @@
 import os
 import tensorflow as tf
+import keras
 
 # ---------------------------------------------------------------------------
 # Projeto 1 — Otimização do Modelo (MNIST)
@@ -18,7 +19,7 @@ def main():
     tflite_path = os.path.join(script_dir, "model.tflite")
     
     print(f"Carregando modelo de {model_path}...")
-    model = tf.keras.models.load_model(model_path)
+    model = keras.models.load_model(model_path)
     
     print("Convertendo modelo para TFLite com otimização (Dynamic Range Quantization)...")
     converter = tf.lite.TFLiteConverter.from_keras_model(model)

@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+import keras
 
 # ---------------------------------------------------------------------------
 # Projeto 1 — Inferência com o Modelo Otimizado (model.tflite)
@@ -22,7 +23,7 @@ def main():
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
 
-    (_, _), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    (_, _), (x_test, y_test) = keras.datasets.mnist.load_data()
     x_test = x_test.astype("float32") / 255.0
     x_test = np.expand_dims(x_test, axis=-1)
 

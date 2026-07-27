@@ -1,8 +1,8 @@
 import os
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-from tensorflow.keras.callbacks import EarlyStopping
+import keras
+from keras import layers
+from keras.callbacks import EarlyStopping
 
 # ---------------------------------------------------------------------------
 # Projeto 1 — Classificação MNIST
