@@ -1,6 +1,9 @@
+import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
+from tensorflow.keras.callbacks import EarlyStopping
 
 # ---------------------------------------------------------------------------
 # Projeto 1 — Classificação MNIST
@@ -15,12 +18,6 @@ from tensorflow.keras import layers
 #   6. Exibir a acurácia de validação final no terminal
 #   7. Salvar o modelo treinado como "model.h5"
 # ---------------------------------------------------------------------------
-
-import os
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-from tensorflow.keras.callbacks import EarlyStopping
 
 def main():
     (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
